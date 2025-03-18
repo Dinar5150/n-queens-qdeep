@@ -18,8 +18,9 @@ import numpy as np
 import matplotlib
 matplotlib.use("agg")    # must select backend before importing pyplot
 import matplotlib.pyplot as plt
-from dimod import BinaryQuadraticModel
-from dwave.system import LeapHybridSampler
+from dwave.samplers import SimulatedAnnealingSampler
+
+NUM_READS = 1000
 
 from exact_cover import exact_cover_bqm
 
@@ -99,9 +100,9 @@ def n_queens(n, sampler=None):
     bqm = handle_diag_constraints(bqm, subsets, diag_constraint_ids)
 
     if sampler is None:
-        sampler = LeapHybridSampler()
+        sampler = SimulatedAnnealingSampler()
 
-    sampleset = sampler.sample(bqm, label='Example - N Queens')
+    sampleset = sampler.sample(bqm, label='Example - N Queens', num_reads=NUM_READS)
     sample = sampleset.first.sample
 
     return [subsets[i] for i in sample if sample[i]]
