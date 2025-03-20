@@ -5,6 +5,10 @@
   https://circleci.com/gh/dwave-examples/n-queens.svg?style=shield)](
   https://circleci.com/gh/dwave-examples/n-queens)
 
+# Important note
+
+This repository is a fork of [D-Wave's original n-queens](https://github.com/dwave-examples/n-queens). The contributors to this fork do not claim ownership or authorship of the original codebase. All credit for the original work belongs to D-Wave Systems and its respective contributors.
+
 # N Queens
 
 The [n-queens problem](https://en.wikipedia.org/wiki/Eight_queens_puzzle) refers
